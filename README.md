@@ -4,6 +4,7 @@ FindMyCar
 Mobile Web app that lets you bookmark where you parked your car
 
 milestones
+----------
 
 [x] prototype
 [x] base map, get user location
