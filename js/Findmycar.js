@@ -3,7 +3,7 @@
 var x = document.getElementById("texto");
 var userLat;
 var userLon;
-var precision;
+var accu;
 
 function getLocation()
   {
@@ -15,21 +15,21 @@ function getLocation()
     }
   else{x.innerHTML = "Geolocation is not supported by this browser.";}
   }
-function showPosition(position)
-  {
+function showPosition(position) {
   	x.innerHTML = "geolocationAPI coords <br>Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-	  lat = position.coords.latitude;
-	  lon = position.coords.longitude;
-	  var mapCenter = new L.LatLng(lat, lon);
-	  map.setView(mapCenter, 2);
+	lat = position.coords.latitude;
+	lon = position.coords.longitude;
+	accu= position.coords.accuracy;
 
-	  precision= coords.accuracy;
-	  L.marker(mapCenter).addTo(map)
-		.bindPopup("You are within " + precision + " meters from this point").openPopup();
+	var mapCenter = new L.LatLng(lat, lon);
+	map.setView(mapCenter, 2);
 
-	L.circle(mapCenter, precision).addTo(map);
-  }
+	L.marker(mapCenter).addTo(map)
+	.bindPopup("You are within " + accu + " meters from this point").openPopup();
+
+	L.circle(mapCenter, accu).addTo(map);
+}
 
 function noLoco(position) {
 	map.setView([42, 2], 2);
