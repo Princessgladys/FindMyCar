@@ -16,7 +16,7 @@ function getLocation()
   else{x.innerHTML = "Geolocation is not supported by this browser.";}
   }
 function showPosition(position) {
-  	x.innerHTML = "geolocationAPI coords <br>Latitude: " + position.coords.latitude + 
+  	x.innerHTML = "geolocationAPI coords | Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
@@ -32,7 +32,7 @@ function showPosition(position) {
 }
 
 function noLoco(position) {
-	map.setView([42, 2], 13);
+	map.setView([41.3, 2.19], 13);
 }
 var map = L.map('map').setView([42, 2], 13);
 
