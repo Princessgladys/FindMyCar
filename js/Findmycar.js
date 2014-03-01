@@ -36,7 +36,7 @@ function getLocation()  {
 };
 
 function showPosition(position) {
-  	x.innerHTML = position.coords.latitude + position.coords.longitude;
+  	x.innerHTML = position.coords.latitude +', '+ position.coords.longitude;
 	
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
