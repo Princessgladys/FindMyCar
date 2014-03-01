@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>where's my car</title>
-		<link rel="shortcut icon" href="img/icon_parking.png" type="image/x-icon"/>
+		<title>Where's my car</title>
+		<link rel="icon" type="image/png" href="img/icon_parking.png">
+		
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 		<link src="style.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
@@ -11,10 +12,12 @@
 	</head>
 	<body>
 		<!-- <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div> -->
-		<p id="texto" style="position: absolute ; top: 0; left: 100px;">Dude, Where's my car?</p>
-		<button onclick="getLocation()">get location</button>
+		<p id="texto" style="position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);">Dude, Where's my car?</p>
+		<!--<button onclick="getLocation()">get location</button>-->
+		<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;" src="img/location_button.png" onClick='getLocation()'/>
 		
-		<div id="map" style="width: 100%; height: 100%; position: absolute;top: 40px;" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
+		<div id="map" style="width: 100%; height: 100%; position: absolute;top: 0; left:0" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
 		<script src="js/Findmycar.js"></script>
 	</body>
 </html>
+
