@@ -5,3 +5,10 @@ body {
 html, body, #map {
     height: 100%;
 }
+#texto {
+	position: absolute; 
+	top: 10px; 
+	left: 80%; 
+	z-index: 99;
+	background-color: white;
+}
