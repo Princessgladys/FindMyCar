@@ -5,11 +5,13 @@ var userLat;
 var userLon;
 var accu;
 
+//prefix monkeypatching
+navigator.getUserP
 function getLocation()
   {
   if (navigator.geolocation)
     {
-	navigator.geolocation.getCurrentPosition(showPosition,noLoco,{frequency:5000,maximumAge: 0, timeout: 10000, enableHighAccuracy:true});
+	navigator.geolocation.getCurrentPosition(showPosition,noLoco,{frequency:5000,maximumAge: 0, timeout: 10000, enableHighAccuracy:false});
     //navigator.geolocation.getCurrentPosition(showPosition);
     //navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
     }
