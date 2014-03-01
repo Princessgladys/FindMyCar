@@ -17,13 +17,13 @@ function getLocation()
   }
 function showPosition(position) {
   	x.innerHTML = "geolocationAPI coords | Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+  "| Longitude: " + position.coords.longitude;
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
 	var mapCenter = new L.LatLng(lat, lon);
-	map.setView(mapCenter, 13);
+	map.setView(mapCenter, 18);
 
 	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
@@ -32,9 +32,10 @@ function showPosition(position) {
 }
 
 function noLoco(position) {
-	map.setView([41.32, 2.19], 13);
+	map.setView([41.3905, 2.1914], 17);
+	x.innerHTML = "Geolocation is not supported by this browser"
 }
-var map = L.map('map').setView([41.33, 2.195], 13);
+var map = L.map('map').setView([41.3905, 2.1914], 15);
 
 
 L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
