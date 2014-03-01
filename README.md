@@ -7,8 +7,7 @@ milestones
 ----------
 
 [x] prototype
-[x] base map, get user location on pc
-[ ] get user location on a phone
+[x] base map, get user location
 [ ] save location on localstorage
 [ ] get a route to the car
 [ ] heatmaps
