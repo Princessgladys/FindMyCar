@@ -1,3 +1,20 @@
+//geolocation options
+var options;
+
+if (navigator.userAgent.toLowerCase().match(/android/)) {
+	options = {
+	    maximumAge: 30000,
+	    timeout: 5000,
+	    enableHighAccuracy: false
+	};
+} else {
+	options = {
+	    maximumAge: 30000,
+	    timeout: 5000,
+	    enableHighAccuracy: true
+	};
+}
+
 
 //geolocation API
 var x = document.getElementById("texto");
@@ -6,24 +23,10 @@ var userLon;
 var accu;
 
 
-function getGeoLocation() {
-        var options = null;
-        if (navigator.geolocation) {
-            if (browserChrome) //set this var looking for Chrome un user-agent header
-                options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
-            else
-                options={maximumAge:Infinity, timeout:0};
-            navigator.geolocation.getCurrentPosition(getGeoLocationCallback,
-                    getGeoLocationErrorCallback,
-                   options);
-        }
-    }
-
-
 function getLocation()  {
   var options = null;
   if (navigator.geolocation) {
-    options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
+    //options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
 	navigator.geolocation.getCurrentPosition(showPosition,noPosition,options);
 
   }
@@ -33,8 +36,8 @@ function getLocation()  {
 };
 
 function showPosition(position) {
-  	x.innerHTML = "Lat: " + position.coords.latitude + 
-  "| Long: " + position.coords.longitude;
+  	x.innerHTML = "Lat: " + position.coords.latitude + "| Long: " + position.coords.longitude;
+	
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
@@ -80,4 +83,13 @@ map.on('locationerror', onLocationError);
 
 map.locate({setView: true, maxZoom: 16});
 */
+map.on('moveend', function() {
+    console.log("map was panned!");
+    console.log("zoom: " + map.getZoom());    // prints out zoom level
+    console.log("center: " + map.getCenter());    // prints out map center
+    //console.log(map.getBounds());    // throws error
+    console.log("min zoom "+map.getMinZoom() + ' max '+ map.getMaxZoom() )
+});
+
+
 
