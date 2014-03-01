@@ -6,6 +6,8 @@ Mobile Web app that lets you bookmark where you parked your car
 milestones
 ----------
 
+[x] landing page
+
 [x] base map, get user location (geolocationAPI)
 
 [ ] save location on localstorage
