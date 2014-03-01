@@ -1,23 +1,77 @@
-<!DOCTYPE html>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-	<head>
-		<title>Where's my car</title>
-		<link rel="icon" type="image/png" href="img/icon_parking.png">
-		
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-		<link src="style.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
-		<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	</head>
-	<body>
-		<!-- <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div> -->
-		<p id="texto" style="position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);">Dude, Where's my car?</p>
-		<!--<button onclick="getLocation()">get location</button>-->
-		<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;" src="img/location_button.png" onClick='getLocation()'/>
-		
-		<div id="map" style="width: 100%; height: 100%; position: absolute;top: 0; left:0" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
-		<script src="js/Findmycar.js"></script>
-	</body>
-</html>
+<head>
+        <title>Where is my car</title>
+        <link rel="icon" type="image/png" href="img/icon_parking.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/init_menu_style.css" rel="stylesheet" type="text/css"  media="all" />
+        <meta name="keywords" content="leaflet, geolocation, app" />
+</head>
+<body>
+<!--start-wrap-->
+    <!--start-header-->
+    <div id="page">
+            <div id="header">
+                <a href="#menu"> </a>
+                Find your car
+            </div>
+        </div>
 
+    </div>
+    <!--start-image-banner-->
+    <div class="img-banner">
+        <div class="img-banner-pic">
+        </div>
+        <div class="img-banner-info">
+            <h1><span>Dude</span> where is my car</h1>
+            <h2>Web app that help you find your car</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Sed ut laudantium, totam rem aperiam.</p>
+        </div>
+        
+        <div class="clear"> </div>
+    </div>
+
+    <!--/End-image-banner-->
+    <!--start-top-grids-->
+    <div class="top-grids" id="features">
+    <div class="wrap">
+        <div class="top-grid">
+            <a class="icon1" href="getloc.html"><span> </span> </a>
+            <h3>Add location</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+
+        </div>
+        <div class="top-grid">
+            <a class="icon2" href="#"><span> </span> </a>
+            <h3>See location</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        </div>
+        <div class="top-grid">
+            <a class="icon3" href="#"><span> </span> </a>
+            <h3>See past location (heat map)</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        </div>
+        <div class="clear"> </div>
+    </div>
+    </div>
+    <!--//End-top-grids-->
+    
+    <!--start-footer-->
+    <div class="clear"> </div>
+    <div class="footer">
+        <div class="wrap">
+            <p>Design by <a href="https://github.com/mappingCo">sigon</a></p>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+        </div>
+        </div>
+    </div>
+    <!---//End-footer-->
+<!--//End-wrap-->
+</body>
+</html>
