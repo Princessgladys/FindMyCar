@@ -32,9 +32,9 @@ function showPosition(position) {
 }
 
 function noLoco(position) {
-	map.setView([41.3, 2.19], 13);
+	map.setView([41.32, 2.19], 13);
 }
-var map = L.map('map').setView([42, 2], 13);
+var map = L.map('map').setView([41.33, 2.195], 13);
 
 
 L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
