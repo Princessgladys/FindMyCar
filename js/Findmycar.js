@@ -5,21 +5,36 @@ var userLat;
 var userLon;
 var accu;
 
-//prefix monkeypatching
-navigator.getUserP
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-	navigator.geolocation.getCurrentPosition(showPosition,noLoco,{frequency:5000,maximumAge: 0, timeout: 10000, enableHighAccuracy:false});
-    //navigator.geolocation.getCurrentPosition(showPosition);
-    //navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
+
+function getGeoLocation() {
+        var options = null;
+        if (navigator.geolocation) {
+            if (browserChrome) //set this var looking for Chrome un user-agent header
+                options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
+            else
+                options={maximumAge:Infinity, timeout:0};
+            navigator.geolocation.getCurrentPosition(getGeoLocationCallback,
+                    getGeoLocationErrorCallback,
+                   options);
+        }
     }
-  else{x.innerHTML = "Geolocation is not supported by this browser.";}
+
+
+function getLocation()  {
+  var options = null;
+  if (navigator.geolocation) {
+    options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
+	navigator.geolocation.getCurrentPosition(showPosition,noPosition,options);
+
   }
+  else {
+  	x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+};
+
 function showPosition(position) {
-  	x.innerHTML = "geolocationAPI coords | Latitude: " + position.coords.latitude + 
-  "| Longitude: " + position.coords.longitude;
+  	x.innerHTML = "Lat: " + position.coords.latitude + 
+  "| Long: " + position.coords.longitude;
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
@@ -33,9 +48,10 @@ function showPosition(position) {
 	L.circle(mapCenter, accu).addTo(map);
 }
 
-function noLoco(position) {
-	map.setView([41.3905, 2.1914], 17);
+function noPosition(position) {
+	//map.setView([41.3905, 2.1914], 15);
 	x.innerHTML = "Geolocation is not supported by this browser"
+	alert('no hemos podido localizar tu posicion')
 }
 var map = L.map('map').setView([41.3905, 2.1914], 15);
 
