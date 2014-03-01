@@ -23,7 +23,7 @@ function showPosition(position) {
 	accu= position.coords.accuracy;
 
 	var mapCenter = new L.LatLng(lat, lon);
-	map.setView(mapCenter, 2);
+	map.setView(mapCenter, 13);
 
 	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
@@ -32,7 +32,7 @@ function showPosition(position) {
 }
 
 function noLoco(position) {
-	map.setView([42, 2], 2);
+	map.setView([42, 2], 13);
 }
 var map = L.map('map').setView([42, 2], 13);
 
