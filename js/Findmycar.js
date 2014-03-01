@@ -1,4 +1,4 @@
-//geolocation options
+/*//geolocation options
 var options;
 
 if (navigator.userAgent.toLowerCase().match(/android/)) {
@@ -13,7 +13,7 @@ if (navigator.userAgent.toLowerCase().match(/android/)) {
 	    timeout: 5000,
 	    enableHighAccuracy: true
 	};
-}
+}*/
 
 
 //geolocation API
@@ -26,7 +26,7 @@ var accu;
 function getLocation()  {
   var options = null;
   if (navigator.geolocation) {
-    //options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
+    options={enableHighAccuracy: true, maximumAge: 15000, timeout: 30000};
 	navigator.geolocation.getCurrentPosition(showPosition,noPosition,options);
 
   }
@@ -36,14 +36,14 @@ function getLocation()  {
 };
 
 function showPosition(position) {
-  	x.innerHTML = "Lat: " + position.coords.latitude + "| Long: " + position.coords.longitude;
+  	x.innerHTML = position.coords.latitude + position.coords.longitude;
 	
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
 	var mapCenter = new L.LatLng(lat, lon);
-	map.setView(mapCenter, 18);
+	map.setView(mapCenter, 24);
 
 	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
