@@ -10,7 +10,9 @@ milestones
 
 [x] base map, get user location (geolocationAPI)
 
-[ ] save location on localstorage
+[x] save location on localstorage
+
+[ ] see location
 
 [ ] get a route to the car
 
