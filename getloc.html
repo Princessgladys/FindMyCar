@@ -3,11 +3,13 @@
 	<head>
 		<title>Where's my car</title>
 		<link rel="icon" type="image/png" href="img/icon_parking.png">
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+		<link rel="stylesheet" href="leaflet-0.7.2/leaflet.css" />
+
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/nav-bar.css">
-		
-		<link rel="stylesheet" href="leaflet-0.7.2/leaflet.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+
 		<script src="leaflet-0.7.2/leaflet.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	</head>
@@ -20,6 +22,7 @@
 		<!-- save location -->
 		<button style="position: absolute; top: 75px;right:20px; z-index: 99" onclick="savelocation()">Save location</button>
 
+		<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
 		<!-- footer menu -->
 		<div id="navbar">
 			<div id ="footer" >
@@ -31,7 +34,7 @@
 		</div>
 	
 		
-		<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
+
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="js/Findmycar.js"></script>
 	</body>

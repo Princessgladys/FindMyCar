@@ -13,3 +13,6 @@ html, body, {
 #texto {
 	position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);
 }
+.leaflet-top .leaflet-control {
+margin-top: 69px;
+}
