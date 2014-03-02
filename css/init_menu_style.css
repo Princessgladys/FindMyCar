@@ -173,10 +173,10 @@ body{
 
 }
 .icon1 span{
-	height: 124px;
-	width: 161px;
+	height: 65px;
+	width: 65px;
 	display: block;
-	background: url(../img/location_gps_big.png) no-repeat;
+	background: url(../img/location_64px.png) no-repeat;
 	vertical-align: middle;
 }
 .icon2{
@@ -200,7 +200,7 @@ body{
 	height: 65px;
 	width: 65px;
 	display: block;
-	background: url(../img/map.png) no-repeat;
+	background: url(../img/eye_64px.png) no-repeat;
 	vertical-align: middle;
 }
 .top-grid{

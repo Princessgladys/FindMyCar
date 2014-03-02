@@ -3,9 +3,10 @@
 	<head>
 		<title>Where's my car</title>
 		<link rel="icon" type="image/png" href="img/icon_parking.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/nav-bar.css">
 		
 		<link rel="stylesheet" href="leaflet-0.7.2/leaflet.css" />
-		<link src="style.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
 		<script src="leaflet-0.7.2/leaflet.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -14,14 +15,23 @@
 		<!-- get location -->
 		<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;cursor: pointer" src="img/location_button.png" onClick='getLocation()'/>
 		
-		<p id="texto" style="position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);">&nbsp;&nbsp;&nbsp;Get my Position&nbsp;&nbsp;&nbsp;</p>
+		<p id="texto">&nbsp;&nbsp;&nbsp;Get my Position&nbsp;&nbsp;&nbsp;</p>
 		
 		<!-- save location -->
 		<button style="position: absolute; top: 75px;right:20px; z-index: 99" onclick="savelocation()">Save location</button>
 
+		<!-- footer menu -->
+		<div id="navbar">
+			<div id ="footer" >
+				<a href="getloc.html" class= "pressed" style="width: 25%;"><div class ="menuIcon1"></div>Add Location</a>
+				<a href="seeLoc.html" style="width: 25%; " ><div class ="menuIcon2"></div>See Location</a>
+				<a href="#" style="width: 25%;" ><div class ="menuIcon3"></div>Past Locations</a>
+				<a href="index.html" style="width: 25%;"><div class ="menuIcon4"></div>About</a>
+			</div>
+		</div>
 	
 		
-		<div id="map" style="width: 100%; height: 100%; position: absolute;top: 0; left:0" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
+		<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="js/Findmycar.js"></script>
 	</body>

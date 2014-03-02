@@ -4,14 +4,12 @@ body {
 	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
 
 }
-html, body, #map {
+#map{
+	width: 100%; height: 100%; position: absolute;bottom: 50px; left:0;
+}
+html, body, {
     height: 100%;
 }
 #texto {
-	position: absolute; 
-	top: 10px; 
-	left: 80%; 
-	z-index: 99;
-	background-color: white;
+	position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);
 }
-
