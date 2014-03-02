@@ -12,6 +12,8 @@ milestones
 
 [x] save location on localstorage
 
+[x] footer menu
+
 [ ] see location
 
 [ ] get a route to the car
