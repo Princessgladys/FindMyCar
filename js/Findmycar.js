@@ -80,12 +80,12 @@ function savelocation() {
 	
 	values.push(lat); //push each value into our values array
 	values.push(lon);
-	values.push(acc);
+	values.push(accu);
 
 	x.innerHTML =DateTime+ '<br>, '+ lat+', '+lon+ ', '+ accuracy
 	saveToLocalDB(DateTime, values)
 
-}
+};
 
 //retrieve the values from the database
 function getFromLocalDB(){
