@@ -32,10 +32,6 @@ function showPosition(position) {
 	L.circle(mapCenter, accu).addTo(map);
 }
 
-function userLocation(){
-	saveLocation(lat, lon, accu);//calls a function in locations.js
-};
-
 function getNoPosition(position) {
 	//map.setView([41.3905, 2.1914], 15);
 	x.innerHTML = "Geolocation is not supported"
@@ -58,5 +54,53 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
     console.log("min zoom "+map.getMinZoom() + ' max '+ map.getMaxZoom() )
 });*/
 
+//save data values into localstorage
+function saveToLocalDB (key, value){
 
+	if (typeof(localStorage) == 'undefined' ) {
+		alert('Your browser does not support HTML5 localStorage. Try upgrading.');
+	} else {
+		try {
+			localStorage.setItem(key, value.join(";")); 
+			//localStorage.setItem(key, value); //saves to the database, "key", "value"
+		} catch (e) {
+		 	 if (e == QUOTA_EXCEEDED_ERR) {
+		 	 	 alert('Quota exceeded!'); //data wasn't successfully saved due to quota exceed so throw an error
+			}
+		}
+	}
+};
+
+
+//push data into an array
+function savelocation() {
+	var newDate = new Date(),
+		DateTime = newDate.getTime(),
+		values = new Array(),
+	
+	values.push(lat); //push each value into our values array
+	values.push(lon);
+	values.push(acc);
+
+	x.innerHTML =DateTime+ '<br>, '+ lat+', '+lon+ ', '+ accuracy
+	saveToLocalDB(DateTime, values)
+
+}
+
+//retrieve the values from the database
+function getFromLocalDB(){
+	
+	var localDBlength =localStorage.length;
+	console.log('localDBlength: '+localDBlength)
+	
+	var itemKey = localStorage.key(0);//get the first item (zero) from the database.
+	var values = localStorage.getItem(itemKey); //values currently look like 'Some Project;12;5/7/2010'
+	values = values.split(";");
+	var lon = values[0];
+	var lat = values[1];
+	var acc = values[2];
+	var milliseconds = new Date(itemKey);
+	var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
+	alert(fecha)
+};
 
