@@ -76,7 +76,7 @@ function saveToLocalDB (key, value){
 function savelocation() {
 	var newDate = new Date(),
 		DateTime = newDate.getTime(),
-		values = new Array(),
+		values = new Array();
 	
 	values.push(lat); //push each value into our values array
 	values.push(lon);
