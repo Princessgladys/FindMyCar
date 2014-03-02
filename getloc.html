@@ -11,13 +11,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	</head>
 	<body>
-		<!-- <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div> -->
-		<p id="texto" style="position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);">&nbsp;&nbsp;&nbsp;Get my Position&nbsp;&nbsp;&nbsp;</p>
-		<!--<button onclick="getLocation()">get location</button>-->
+		<!-- get location -->
 		<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;cursor: pointer" src="img/location_button.png" onClick='getLocation()'/>
+		
+		<p id="texto" style="position: absolute; top: 34px; right: 5px; z-index: 99;background-color: rgba(252, 248, 248, 0.56);">&nbsp;&nbsp;&nbsp;Get my Position&nbsp;&nbsp;&nbsp;</p>
+		
+		<!-- save location -->
+		<button style="position: absolute; top: 75px;right:20px; z-index: 99" onclick="userLocation()">Save location</button>
+
+	
 		
 		<div id="map" style="width: 100%; height: 100%; position: absolute;top: 0; left:0" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
 		<script src="js/Findmycar.js"></script>
+		<script src="js/saveLocation.js"></script>
 	</body>
 </html>
 
