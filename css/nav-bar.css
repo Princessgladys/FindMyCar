@@ -44,17 +44,22 @@
 	width: 24px;
 	height: 26px;
 	margin: auto;
+	background-position:center; 
 }
 .menuIcon1{
 	background: url(../img/location_24px.png) no-repeat;
+	background-position:center; 
 }
 
 .menuIcon2 {
 	background: url(../img/location_pin_24px.png) no-repeat;
+	background-position:center; 
 }
 .menuIcon3 {
 	background: url(../img/eye_24px.png) no-repeat;
+	background-position:center; 
 }
 .menuIcon4 {
 	background: url(../img/settings_24px.png) no-repeat;
+	background-position:center; 
 }
