@@ -16,7 +16,7 @@
 #navbar a {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	top: 4px;
+	top: 6px;
 	height: 49px;
 	overflow: hidden;
 	font-size: 12px;
@@ -28,7 +28,7 @@
 	width: 33.3%;
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
-	line-height: 67px;
+	line-height: 73px;
 	position: relative;
 	margin: -3px;
 }
@@ -36,14 +36,14 @@
 	border-radius: 0;
 	background: #00AEEF;
 	margin: -3px;
-	top: 4px;
+	top: 6px;
 
 }
 .menuIcon1, .menuIcon2, .menuIcon3, .menuIcon4{
 	position:absolute;
 	left: 0;
 	width: 100%;
-	height: 26px;
+	height: 30px;26
 }
 
 .menuIcon1{
