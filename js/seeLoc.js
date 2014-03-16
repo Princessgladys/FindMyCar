@@ -30,10 +30,8 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 
 		var carLatLng = new L.LatLng(lat, lon);
 
-		map.setView(carLatLng, 17);
+		//map.setView(carLatLng, 17);
 		//marker
-	    
-		L.marker(carLatLng).addTo(map)
-			.bindPopup("<b>My car</b><br>Should be here").openPopup();
+		//L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here").openPopup();
 	}
 //};
