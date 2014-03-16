@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.3904, 2.1914], 15);
+var map = L.map('map').setView([41.3904, 2.1914], 13);
 
 //the base map:
 L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
@@ -32,12 +32,11 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		}
 		var latN= +lat,
 			lonN= +lon;
-		console.log('coche aparcado el: '+fecha+', en '+latN.round(4)+', '+lonN.round(4));
+		console.log('car parked on: '+fecha+', at '+latN.round(4)+', '+lonN.round(4));
 
 		var carLatLng = new L.LatLng(lat, lon);
-		console.log(carLatLng)
 		map.setView(carLatLng, 17);
-		//marker
-		L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on:"+fecha).openPopup();
+		// add marker
+		L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on: "+fecha+"h").openPopup();
 	}
 //};
