@@ -16,3 +16,20 @@ html, body, {
 .leaflet-top .leaflet-control {
 margin-top: 69px;
 }
+.hide { display:none; }
+
+#msgbox {
+	background: #E4673F;
+	border: none;
+	border-top: 1px solid #E4673F;
+	box-shadow: none;
+	position: absolute;
+	bottom: 50px;
+	z-index: 1000;
+	height: 49px;
+	display: block;
+	left: 0;
+	right: 0;
+	padding: 0 3px;
+	margin: 0;
+}
