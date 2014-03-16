@@ -36,6 +36,7 @@ function getNoPosition(position) {
 	//map.setView([41.3905, 2.1914], 15);
 	x.innerHTML = "Geolocation is not supported"
 }
+
 var map = L.map('map').setView([41.3905, 2.1914], 15);
 
 
