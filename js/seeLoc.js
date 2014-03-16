@@ -23,13 +23,13 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		var lon = values[0];
 		var lat = values[1];
 		var acc = values[2];
-		var milliseconds = new Date(itemKey);
+		var milliseconds = new Date(+itemKey);
 		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
 		console.log(itemKey+', '+milliseconds)
 		console.log('coche aparcado el: '+fecha+': '+lon+', '+lat)
 
 		var carLatLng = new L.LatLng(lat, lon);
-
+		console.log(carLatLng)
 		//map.setView(carLatLng, 17);
 		//marker
 		//L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here").openPopup();
