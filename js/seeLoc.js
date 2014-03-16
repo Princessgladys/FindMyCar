@@ -24,7 +24,7 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		var lon = values[1];
 		var acc = values[2];
 		var milliseconds = new Date(+itemKey);//convert to number
-		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+'-'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
+		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+1+'-'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
 		console.log(itemKey+', '+milliseconds);
 		// redondear a 4 decimales
 		Number.prototype.round = function(places) {
