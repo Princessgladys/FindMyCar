@@ -14,7 +14,7 @@ milestones
 
 [x] footer menu
 
-[ ] see location
+[x] see location
 
 [ ] get a route to the car
 
