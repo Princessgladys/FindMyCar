@@ -18,5 +18,5 @@ milestones
 
 [ ] get a route to the car
 
-[ ] heatmaps
+[x] heatmaps
 
