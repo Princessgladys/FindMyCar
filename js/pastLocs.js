@@ -40,9 +40,7 @@ else {
 	};
 }
 console.log(arrayPoints)
-var addressPoints = [
-[-37.8839, 175.3745188667, "571"],
-[-37.8869090667, 175.3657417333, "486"]
+
 
 function heatmap(){
 	//L.heatLayer(latlngs, options)
