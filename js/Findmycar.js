@@ -62,7 +62,9 @@ function saveToLocalDB (key, value){
 	} else {
 		try {
 			localStorage.setItem(key, value.join(";")); 
-			console.log('save location on localStorage')
+			$('#msgbox').removeClass('hide');
+			$('#msgbox').html('save location on localStorage. '+value.join(";"));
+			console.log('save location on localStorage');
 			//localStorage.setItem(key, value); //saves to the database, "key", "value"
 		} catch (e) {
 		 	 if (e == QUOTA_EXCEEDED_ERR) {
@@ -83,7 +85,7 @@ function savelocation() {
 	values.push(lon);
 	values.push(accu);
 
-	x.innerHTML =DateTime+ '<br>, '+ lat+', '+lon+ ', '+ accu
+	x.innerHTML =DateTime+ '<br>, '+ lat+', '+lon+ ', '+ accu;
 	saveToLocalDB(DateTime, values);
 	console.log('savelocation:'+DateTime+ ', '+ lat+', '+lon+ ', '+ accu)
 
