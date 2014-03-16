@@ -24,9 +24,10 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		var lon = values[1];
 		var acc = values[2];
 		var milliseconds = new Date(+itemKey);
-		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
-		console.log(itemKey+', '+milliseconds)
-		console.log('coche aparcado el: '+fecha+': '+lat+', '+lon)
+		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+'-'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
+		console.log(itemKey+', '+milliseconds);
+		//Math.round(num + "e+4")  + "e-4") redondear a 4 decimales
+		console.log('coche aparcado el: '+fecha+': '+Math.round(lat + "e+4")  + "e-4")+', '+Math.round(lon + "e+4")  + "e-4"))
 
 		var carLatLng = new L.LatLng(lat, lon);
 		console.log(carLatLng)
