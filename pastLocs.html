@@ -3,43 +3,33 @@
 	<head>
 		<title>Where's my car</title>
 		<link rel="icon" type="image/png" href="img/icon_parking.png">
-
 		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+		<script src="leaflet-0.7.2/leaflet.js"></script>
 		<link rel="stylesheet" href="leaflet-0.7.2/leaflet.css" />
-
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/nav-bar.css">
 
-		<script src="leaflet-0.7.2/leaflet.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	</head>
 	<body>
-		<!-- get location -->
-		<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;cursor: pointer" src="img/location_button.png" onClick='getLocation()'/>
+		<!-- <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div> -->
 		
-		<p id="texto">&nbsp;&nbsp;&nbsp;Get my Position&nbsp;&nbsp;&nbsp;</p>
+	<!-- 	<img title="getLocation" style="position: absolute; top: 5px;right:55px;height:35px; z-index: 99;cursor: pointer" src="img/location_button.png" onClick='getLocation()'/> -->
 		
-		<!-- save location -->
-		<button style="position: absolute; top: 75px;right:20px; z-index: 99" onclick="savelocation()">Save location</button>
-
+		
 		<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
+
 		<!-- footer menu -->
-		<div id="msgbox" class="hide">
-			<p></p>
-		</div>
 		<div id="navbar">
 			<div id ="footer" >
-				<a href="addloc.html" class= "pressed" style="width: 33.3%;"><div class ="menuIcon1"></div>Add Location</a>
-				<a href="seeLoc.html" style="width: 33.3%; " ><div class ="menuIcon2"></div>See Location</a>
+				<a href="addloc.html"  style="width: 33.3%;"><div class ="menuIcon1"></div>Add Location</a>
+				<a href="seeLoc.html" class= "pressed" style="width: 33.3%; " ><div class ="menuIcon2"></div>See Location</a>
 				<a href="pastLocs.html" style="width: 33.3%;" ><div class ="menuIcon3"></div>Past Locations</a>
 <!-- 				<a href="index.html" style="width: 25%;"><div class ="menuIcon4"></div>About</a> -->
 			</div>
 		</div>
-	
-		
+		<script src="js/pastLocs.js"></script>
 
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="js/addloc.js"></script>
 	</body>
 </html>
 
