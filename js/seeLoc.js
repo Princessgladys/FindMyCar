@@ -13,6 +13,7 @@ window.onload=function(){
 	var acc = values[2];
 	var milliseconds = new Date(itemKey);
 	var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
+	console.log(itemKey+' '+milliseconds)
 	console.log('coche aparcado el: '+fecha+': '+lon+', '+lat)
 
 	var map = L.map('map').setView([lon, lat], 15);
@@ -23,7 +24,9 @@ window.onload=function(){
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 	}).addTo(map);
 
-	L.marker([lon, lat]).addTo(map);
+	//marker
+    var markerLatLng = new L.LatLng(lat, lon);
+	L.marker(markerLatLng).addTo(map);
 	marker.bindPopup("<b>My car</b><br>Should be here").openPopup();
 };
 
