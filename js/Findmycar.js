@@ -91,20 +91,5 @@ function savelocation() {
 
 };
 
-//retrieve the values from the database
-function getFromLocalDB(){
-	
-	var localDBlength =localStorage.length;
-	console.log('localDBlength: '+localDBlength)
-	
-	var itemKey = localStorage.key(0);//get the first item (zero) from the database.
-	var values = localStorage.getItem(itemKey); //values currently look like 'Some Project;12;5/7/2010'
-	values = values.split(";");
-	var lon = values[0];
-	var lat = values[1];
-	var acc = values[2];
-	var milliseconds = new Date(itemKey);
-	var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
-	alert(fecha)
-};
+
 
