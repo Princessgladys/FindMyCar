@@ -6,7 +6,7 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
-window.onload=function(){
+//window.onload=function(){
 	
 	//retrieve the values from the database
 	var localDBlength =localStorage.length;
@@ -36,4 +36,4 @@ window.onload=function(){
 		L.marker(carLatLng).addTo(map)
 			.bindPopup("<b>My car</b><br>Should be here").openPopup();
 	}
-};
+//};
