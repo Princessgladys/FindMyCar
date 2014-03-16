@@ -30,15 +30,14 @@ function showPosition(position) {
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
 	L.circle(mapCenter, accu).addTo(map);
-}
+};
 
 function getNoPosition(position) {
 	//map.setView([41.3905, 2.1914], 15);
 	x.innerHTML = "Geolocation is not supported"
-}
+};
 
 var map = L.map('map').setView([41.3905, 2.1914], 15);
-
 
 //the base map:
 L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
@@ -74,7 +73,6 @@ function saveToLocalDB (key, value){
 		}
 	}
 };
-
 
 //push data into an array
 function savelocation() {
