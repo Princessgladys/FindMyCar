@@ -39,7 +39,6 @@ else {
 		console.log(arrayPoints[i]);
 	};
 }
-console.log(arrayPoints)
 
 
 function heatmap(){
@@ -59,3 +58,32 @@ function heatmap(){
 	//heat.setOptions(options);
 };
 
+function getLocation()  {
+  var options = null;
+  if (navigator.geolocation) {
+    options={enableHighAccuracy: true, maximumAge: 30000, timeout: 30000};
+	navigator.geolocation.getCurrentPosition(showPosition,getNoPosition,options);
+  }
+  else {
+  	alert("Geolocation is not supported by this browser.");
+  }
+};
+
+function showPosition(position) {
+	lat = position.coords.latitude;
+	lon = position.coords.longitude;
+	accu= position.coords.accuracy;
+
+	var mapCenter = new L.LatLng(lat, lon);
+	map.setView(mapCenter, 14);
+
+	L.marker(mapCenter).addTo(map)
+	.bindPopup("You are within " + accu + " meters from this point").openPopup();
+
+	L.circle(mapCenter, accu).addTo(map);
+}
+
+function getNoPosition(position) {
+	//map.setView([41.3905, 2.1914], 15);
+	alert("Geolocation is not supported")
+}
