@@ -26,14 +26,6 @@ window.onload=function(){
 
 	//marker
     var markerLatLng = new L.LatLng(lat, lon);
-	L.marker(markerLatLng).addTo(map);
-	marker.bindPopup("<b>My car</b><br>Should be here").openPopup();
-};
-
-
-
-
-function getFromLocalDB(){
-
-
+	L.marker(markerLatLng).addTo(map)
+		.bindPopup("<b>My car</b><br>Should be here").openPopup();
 };
