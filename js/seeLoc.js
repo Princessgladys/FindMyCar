@@ -17,27 +17,27 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		console.log('localDBlength: '+localDBlength)
 		var lastItem = localDBlength -1
 
-		var itemKey = localStorage.key(lastItem);//get the first item (zero) from the database.
-		var values = localStorage.getItem(itemKey); //values currently look like 'Some Project;12;5/7/2010'
+		var itemKey = localStorage.key(lastItem);
+		var values = localStorage.getItem(itemKey);
 		values = values.split(";");
 		var lat = values[0];
 		var lon = values[1];
 		var acc = values[2];
-		var milliseconds = new Date(+itemKey);
+		var milliseconds = new Date(+itemKey);//convert to number
 		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+'-'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
 		console.log(itemKey+', '+milliseconds);
-		//Math.round(num + "e+4")  + "e-4") redondear a 4 decimales
+		// redondear a 4 decimales
 		Number.prototype.round = function(places) {
 		  return +(Math.round(this + "e+" + places)  + "e-" + places);
 		}
 		var latN= +lat,
 			lonN= +lon;
-		console.log('coche aparcado el: '+fecha+': '+latN.round(4)+', '+lonN.round(4));
+		console.log('coche aparcado el: '+fecha+', en '+latN.round(4)+', '+lonN.round(4));
 
 		var carLatLng = new L.LatLng(lat, lon);
 		console.log(carLatLng)
 		map.setView(carLatLng, 17);
 		//marker
-		L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here").openPopup();
+		L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on:"+fecha).openPopup();
 	}
 //};
