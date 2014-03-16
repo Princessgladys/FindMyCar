@@ -20,18 +20,18 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		var itemKey = localStorage.key(lastItem);//get the first item (zero) from the database.
 		var values = localStorage.getItem(itemKey); //values currently look like 'Some Project;12;5/7/2010'
 		values = values.split(";");
-		var lon = values[0];
-		var lat = values[1];
+		var lat = values[0];
+		var lon = values[1];
 		var acc = values[2];
 		var milliseconds = new Date(+itemKey);
 		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+', '+milliseconds.getDay()+'-'+milliseconds.getHours()+':'+milliseconds.getMinutes();
 		console.log(itemKey+', '+milliseconds)
-		console.log('coche aparcado el: '+fecha+': '+lon+', '+lat)
+		console.log('coche aparcado el: '+fecha+': '+lat+', '+lon)
 
 		var carLatLng = new L.LatLng(lat, lon);
 		console.log(carLatLng)
-		//map.setView(carLatLng, 17);
+		map.setView(carLatLng, 17);
 		//marker
-		//L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here").openPopup();
+		L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here").openPopup();
 	}
 //};
