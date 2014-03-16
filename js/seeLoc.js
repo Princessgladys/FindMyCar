@@ -27,7 +27,12 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 		var fecha =milliseconds.getFullYear()+'-'+milliseconds.getMonth()+'-'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
 		console.log(itemKey+', '+milliseconds);
 		//Math.round(num + "e+4")  + "e-4") redondear a 4 decimales
-		console.log('coche aparcado el: '+fecha+': '+(Math.round(lat + "e+4")  + "e-4")+', '+(Math.round(lon + "e+4")  + "e-4"));
+		Number.prototype.round = function(places) {
+		  return +(Math.round(this + "e+" + places)  + "e-" + places);
+		}
+		var latN= +lat,
+			lonN= +lon;
+		console.log('coche aparcado el: '+fecha+': '+latN.round(4)+', '+lonN.round(4));
 
 		var carLatLng = new L.LatLng(lat, lon);
 		console.log(carLatLng)
