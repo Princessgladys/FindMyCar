@@ -79,7 +79,7 @@ function getNoPosition(position) {
 // http://project-osrm.org/
 
 function getRoute() {
-	alert('carposition: '+carlat+", "+carlon+' myposition:'mylat+","+mylon)
+	alert('carposition: '+carlat+", "+carlon+' myposition:'+mylat+","+mylon)
 	var osrm_url = "http://map.project-osrm.org/?hl=es&loc="+mylat+","+mylon+"&loc="+carlat+","+carlon+"&z=15";
 	window.open(osrm_url);
 }
