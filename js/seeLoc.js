@@ -1,19 +1,21 @@
 var map = L.map('map').setView([41.3904, 2.1914], 15);
 
 //the base map:
-/* //alternate base
+// 
+//alternate base
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
             maxZoom: 18
          }).addTo(map);
          map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
-*/
+/*
 // var map_url = 'http://tile.stamen.com/toner/{z}/{x}/{y}.jpg'
 var map_url = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png'
 L.tileLayer(map_url, {
 	maxZoom: 18,
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
+*/
 
 var carlat,carlon;
 	
