@@ -20,3 +20,29 @@ milestones
 
 [x] heatmaps
 
+HTML5 geolocation [navigator.geolocation.getCurrentPosition(success, error, options)]:
+
+```
+options:
+===============================================================
+watch                 | [false] | watch for position changes
+timeout               | [10000] | timeout for position lookup
+maximumAge            | [3000]  | max age of cached positions
+enableHighAccuracy    | [true]  | use high-accuracy positioning
+```
+
+
+HTML5 localstorage [localstorage.setitem(key value)]
+
+```
+var newDate = new Date(),
+	DateTime = newDate.getTime(),
+	values = new Array();
+
+values.push(lat);
+values.push(lon);
+values.push(accu);
+
+localStorage.setItem(DateTime, values.join(";")); 
+
+```
