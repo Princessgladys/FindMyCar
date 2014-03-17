@@ -1,9 +1,15 @@
 var map = L.map('map').setView([41.3904, 2.1914], 15);
 
 //the base map:
-// alternate base
+/* //alternate base
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+         }).addTo(map);
+         map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
+*/
 // var map_url = 'http://tile.stamen.com/toner/{z}/{x}/{y}.jpg'
- var map_url = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png'
+var map_url = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png'
 L.tileLayer(map_url, {
 	maxZoom: 18,
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
@@ -40,19 +46,13 @@ else {
 
 	var carLatLng = new L.LatLng(lat, lon);
 	map.setView(carLatLng, 16);
-	// add car marker
-	/*var carIcon = L.icon({
-	    iconUrl: 'img/car.png',
-	    shadowUrl: 'leaf-shadow.png',
-	    iconSize:     [38, 95], // size of the icon
-	    shadowSize:   [50, 64], // size of the shadow
-	    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-	    shadowAnchor: [4, 62],  // the same for the shadow
-	    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-	    
-	});*/
-
-	L.marker(carLatLng/*, {icon: carIcon}*/).addTo(map).bindPopup("<b>My car</b> should be here</br>parked on: "+fecha+"h").openPopup();
+	
+	// add car red marker, Extend the Default marker class
+    var RedIcon = L.Icon.Default.extend({
+        options: {iconUrl: 'img/marker-icon-red.png'}
+    });
+    var redIcon = new RedIcon();
+	L.marker(carLatLng, {icon: redIcon}).addTo(map).bindPopup("<b>My car</b> should be here</br>parked on: "+fecha+"h").openPopup();
 
 }
 
