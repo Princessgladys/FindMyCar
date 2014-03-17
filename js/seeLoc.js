@@ -6,9 +6,9 @@ L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
-
+var carlat,carlon;
 	
-//retrieve the values from the database
+//retrieve values (date and car positions) from the database
 var localDBlength =localStorage.length;
 if (localDBlength == 0) {
 	alert('Sorry, No car position available!!')
@@ -31,8 +31,8 @@ else {
 	Number.prototype.round = function(places) {
 	  return +(Math.round(this + "e+" + places)  + "e-" + places);
 	}
-	var latN= +lat,
-		lonN= +lon;
+	carlat= +lat,
+	carlon= +lon;
 	console.log('car parked on: '+fecha+', at '+latN.round(4)+', '+lonN.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
@@ -41,6 +41,7 @@ else {
 	L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on: "+fecha+"h").openPopup();
 }
 
+// find user position
 function getLocation()  {
   var options = null;
   if (navigator.geolocation) {
@@ -52,12 +53,14 @@ function getLocation()  {
   }
 };
 
+var mylat,mylon;
+
 function showPosition(position) {
-	lat = position.coords.latitude;
-	lon = position.coords.longitude;
+	mylat = position.coords.latitude;
+	mylon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
-	var mapCenter = new L.LatLng(lat, lon);
+	var mapCenter = new L.LatLng(mylat, mylon);
 	map.setView(mapCenter, 14);
 
 	L.marker(mapCenter).addTo(map)
@@ -69,4 +72,14 @@ function showPosition(position) {
 function getNoPosition(position) {
 	//map.setView([41.3905, 2.1914], 15);
 	alert("Geolocation is not supported")
+}
+
+
+// find route with: 
+// http://project-osrm.org/
+
+function getRoute() {
+	alert('carposition: '+carlat+", "+carlon+' myposition:'mylat+","+mylon)
+	var osrm_url = "http://map.project-osrm.org/?hl=es&loc="+mylat+","+mylon+"&loc="+carlat+","+carlon+"&z=15";
+	window.open(osrm_url);
 }
