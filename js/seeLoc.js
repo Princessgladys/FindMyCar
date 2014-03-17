@@ -2,7 +2,7 @@ var map = L.map('map').setView([41.3904, 2.1914], 15);
 
 //the base map:
 L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
-	maxZoom: 17,
+	maxZoom: 14,
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
 
@@ -36,7 +36,7 @@ else {
 	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
-	map.setView(carLatLng, 17);
+	map.setView(carLatLng, 16);
 	// add car marker
 	var carIcon = L.icon({
 	    iconUrl: 'img/car.png'/*,
@@ -73,7 +73,7 @@ function showPosition(position) {
 	accu= position.coords.accuracy;
 
 	var mapCenter = new L.LatLng(mylat, mylon);
-	map.setView(mapCenter, 17);
+	map.setView(mapCenter, 16);
 
 	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
