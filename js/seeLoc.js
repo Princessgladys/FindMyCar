@@ -33,7 +33,7 @@ else {
 	}
 	carlat= +lat,
 	carlon= +lon;
-	console.log('car parked on: '+fecha+', at '+latN.round(4)+', '+lonN.round(4));
+	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
 	map.setView(carLatLng, 15);
