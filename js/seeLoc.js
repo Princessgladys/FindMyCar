@@ -15,7 +15,7 @@ if (localDBlength == 0) {
 }
 else {
 	console.log('localDBlength: '+localDBlength)
-	var lastItem = localDBlength -1
+	var lastItem = localDBlength -1 //last car position
 
 	var itemKey = localStorage.key(lastItem);
 	var values = localStorage.getItem(itemKey);
@@ -36,9 +36,21 @@ else {
 	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
-	map.setView(carLatLng, 15);
-	// add marker
-	L.marker(carLatLng).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on: "+fecha+"h").openPopup();
+	map.setView(carLatLng, 17);
+	// add car marker
+	var carIcon = L.icon({
+	    iconUrl: 'img/car.png'/*,
+	    shadowUrl: 'leaf-shadow.png',
+	    iconSize:     [38, 95], // size of the icon
+	    shadowSize:   [50, 64], // size of the shadow
+	    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	    shadowAnchor: [4, 62],  // the same for the shadow
+	    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	    */
+	});
+
+	L.marker(carLatLng, {icon: carIcon}).addTo(map).bindPopup("<b>My car</b><br>Should be here</br>parked on: "+fecha+"h").openPopup();
+
 }
 
 // find user position
@@ -61,7 +73,7 @@ function showPosition(position) {
 	accu= position.coords.accuracy;
 
 	var mapCenter = new L.LatLng(mylat, mylon);
-	map.setView(mapCenter, 14);
+	map.setView(mapCenter, 17);
 
 	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
@@ -79,7 +91,7 @@ function getNoPosition(position) {
 // http://project-osrm.org/
 
 function getRoute() {
-	alert('carposition: '+carlat+", "+carlon+' myposition:'+mylat+","+mylon)
+	//alert('carposition: '+carlat+", "+carlon+' myposition:'+mylat+","+mylon)
 	var osrm_url = "http://map.project-osrm.org/?hl=es&loc="+mylat+","+mylon+"&loc="+carlat+","+carlon+"&z=15";
 	window.open(osrm_url);
 }
