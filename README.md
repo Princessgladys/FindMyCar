@@ -17,3 +17,5 @@ localstorage.setitem(key, value)
 And show the car position on a [Leaflet map](http://leafletjs.com/)
 
 Additionally the user can get a route to the car with the [project-osrm](http://project-osrm.org/).
+
+![Find my car img](https://raw.githubusercontent.com/mappingCo/FindMyCar/gh-pages/img/findmycar.png "Find my Car Web app")
