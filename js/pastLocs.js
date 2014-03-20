@@ -42,11 +42,13 @@ else {
 		// 
 		arrayPoints.push([+lat,+lon]);
 		myMarkers.push(myMarker);
-		console.log(arrayPoints[i]);
-		console.log(myMarkers[i]);
-
 	};
 }
+
+// fit map view to markers
+var group = new L.featureGroup(myMarkers);
+console.log(group.getBounds())
+map.fitBounds(group.getBounds());
 
 //create heatmap layer
 //L.heatLayer(latlngs, options)
@@ -65,8 +67,9 @@ var options = {
 //heat.setOptions(options);
 
 
-var button = $('#button')
+var button = $('#button');
 
+// hide/show markers
 function showMarkers(){
 	if (button.html() == 'Hide Markers'){
 		button.html('Show Markers');
@@ -80,8 +83,9 @@ function showMarkers(){
 			myMarkers[i].setOpacity(1);
 		}
 	}
-
 };
+
+
 
 //leaflet "zoomstart" and "zoomend" events:
 /*
