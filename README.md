@@ -27,4 +27,6 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 Additionally the user can get a route to the car with the [project-osrm](http://project-osrm.org/).
 
-![Find my car img](https://raw.githubusercontent.com/mappingCo/FindMyCar/gh-pages/img/findmycar.png "Find my Car Web app")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mappingCo/FindMyCar/gh-pages/img/findmycar.png" alt="Find my car img"/>
+</p>
