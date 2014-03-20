@@ -4,7 +4,7 @@ var map = L.map('map').setView([41.3904, 2.1914], 15);
 // 
 //alternate base
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+            attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
             maxZoom: 18
          }).addTo(map);
          map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
@@ -100,3 +100,5 @@ function getRoute() {
 	var osrm_url = "http://map.project-osrm.org/?hl=es&loc="+mylat+","+mylon+"&loc="+carlat+","+carlon+"&z=15";
 	window.open(osrm_url);
 }
+
+// https://github.com/perliedman/leaflet-routing-machine
