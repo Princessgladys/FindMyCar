@@ -4,7 +4,7 @@ var map = L.map('map').setView([41.3904, 2.1914], 15);
 // 
 //alternate base
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+    attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors. Routes from <a href="http://project-osrm.org/">OSRM</a>',
     maxZoom: 18
 }).addTo(map);
 //map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
@@ -89,16 +89,21 @@ function showPosition(position) {
 function getNoPosition(position) {
 	//map.setView([41.3905, 2.1914], 15);
 	alert("Geolocation is not supported")
-}
+};
 
-
-// find route with: 
-// http://project-osrm.org/
-
+// find route with leaflet-routing-machine.js
 function getRoute() {
-	//alert('carposition: '+carlat+", "+carlon+' myposition:'+mylat+","+mylon)
-	var osrm_url = "http://map.project-osrm.org/?hl=es&loc="+mylat+","+mylon+"&loc="+carlat+","+carlon+"&z=15";
-	window.open(osrm_url);
-}
+	if (mylat == undefined) {
+		getLocation();
+	}
 
-// https://github.com/perliedman/leaflet-routing-machine
+	L.Routing.control({
+	    waypoints: [
+	        L.latLng(mylat,mylon),
+	        L.latLng(carlat,carlon)
+	    ]
+	}).addTo(map);
+};
+
+
+
