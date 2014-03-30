@@ -31,7 +31,7 @@ function showPosition(position) {
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
 	L.circle(mapCenter, accu).addTo(map);
-	alert('lat: '+lat+ 'lat+des '+lat+0.005);
+	alert('lat: '+lat+ 'lat+des '+centerlat);
 };
 
 function getNoPosition(position) {
