@@ -16,7 +16,7 @@ html, body, {
 .leaflet-top .leaflet-control {
 margin-top: 69px;
 }
-.hide { display:none; }
+
 
 #msgbox {
 	background: #E4673F;
@@ -78,3 +78,4 @@ margin-top: 69px;
 	top:1px;
 }
 /* This button was generated using CSSButtonGenerator.com */
+.hide { display:none; }
