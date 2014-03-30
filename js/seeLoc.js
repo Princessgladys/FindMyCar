@@ -38,16 +38,13 @@ else {
 	var mes =milliseconds.getMonth()+1;
 	var fecha =milliseconds.getFullYear()+'/'+mes+'/'+milliseconds.getDate()+', '+milliseconds.getHours()+':'+milliseconds.getMinutes();
 	console.log(itemKey+', '+milliseconds);
-	// redondear a 4 decimales
-	Number.prototype.round = function(places) {
-	  return +(Math.round(this + "e+" + places)  + "e-" + places);
-	}
+
 	carlat= +lat,
 	carlon= +lon;
 	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
-	map.setView(carLatLng, 16);
+	map.setView([carLat++0.0005,carlon], 16);
 	
 	// add car red marker, Extend the Default marker class
     var RedIcon = L.Icon.Default.extend({
