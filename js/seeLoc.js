@@ -117,6 +117,8 @@ function getRoute() {
 	        L.latLng(carlat,carlon)
 	    ]
 	}).addTo(map);
+	
+	routeButton.addClass("hide");
 };
 
 
