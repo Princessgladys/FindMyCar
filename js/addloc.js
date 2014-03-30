@@ -28,7 +28,7 @@ function showPosition(position) {
 	var mapCenter = new L.LatLng(centerlat, lon);
 	map.setView(mapCenter, 17);
 
-	L.marker(mapCenter).addTo(map)
+	L.marker([lat, lon]).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
 	L.circle(mapCenter, accu).addTo(map);
