@@ -23,7 +23,8 @@ function showPosition(position) {
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
-	var mapCenter = new L.LatLng(lat+0.005, lon);
+	var centerlat= +lat;
+	var mapCenter = new L.LatLng(centerlat+0.005, lon);
 	map.setView(mapCenter, 17);
 
 	L.marker(mapCenter).addTo(map)
