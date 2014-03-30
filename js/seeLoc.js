@@ -83,7 +83,7 @@ function showPosition(position) {
 	var distance2car= getDistanceFromLatLonInKm(mylat, mylon, carlat, carlon);
 
 	L.marker(mapCenter).addTo(map)
-	.bindPopup("You are within " + accu + " meters from this point</br>and your car is "+distance2car +"km away").openPopup();
+	.bindPopup("You are within " + accu + " meters from this point</br>and your car is "+distance2car.round(2) +"km away").openPopup();
 
 	L.circle(mapCenter, accu).addTo(map);
 }
@@ -125,3 +125,8 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
+
+Number.prototype.round = function(places) {
+  return +(Math.round(this + "e+" + places)  + "e-" + places);
+}
+  
