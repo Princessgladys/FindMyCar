@@ -24,14 +24,14 @@ function showPosition(position) {
 	accu= position.coords.accuracy;
 
 	var centerlat= +lat;
-	centerlat= centerlat-0.0005
+	centerlat= centerlat+0.0005
 	var mapCenter = new L.LatLng(centerlat, lon);
 	map.setView(mapCenter, 17);
 
 	L.marker([lat, lon]).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
-	L.circle(mapCenter, accu).addTo(map);
+	L.circle([lat, lon], accu).addTo(map);
 	alert('lat: '+lat+ 'lat+des '+centerlat);
 };
 
