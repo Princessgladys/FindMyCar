@@ -24,7 +24,7 @@ function showPosition(position) {
 	accu= position.coords.accuracy;
 
 	var centerlat= +lat;
-	centerlat= centerlat+0.005
+	centerlat= centerlat-0.0005
 	var mapCenter = new L.LatLng(centerlat, lon);
 	map.setView(mapCenter, 17);
 
