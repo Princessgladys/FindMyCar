@@ -1,8 +1,12 @@
+var routeButton = $("#routeButton");
+var getLocationButton = $("#getLocationButton");
+var texto  = $("#texto");
+
+// initial view: Barcelona [por que yo lo valgo ;p]
 var map = L.map('map').setView([41.3904, 2.1914], 15);
 
+
 //the base map:
-// 
-//alternate base
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors. Routes from <a href="http://project-osrm.org/">OSRM</a>',
     maxZoom: 18
@@ -48,7 +52,7 @@ else {
 	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
-	map.setView([carlat+0.0005,carlon], 16);
+	map.setView([carlat+0.0006,carlon], 16);
 	
 	// add car red marker, Extend the Default marker class
     var RedIcon = L.Icon.Default.extend({
@@ -73,6 +77,7 @@ function getLocation()  {
 
 var mylat,mylon;
 
+
 function showPosition(position) {
 	mylat = position.coords.latitude;
 	mylon = position.coords.longitude;
@@ -89,6 +94,10 @@ function showPosition(position) {
 	.bindPopup("You are within " + distance2car.round(2) + " km from your car").openPopup();
 
 	L.circle(myPosition, accu).addTo(map);
+	routeButton.removeClass( "hide" );
+	getLocationButton.addClass("hide");
+	texto.addClass("hide");
+
 }
 
 function getNoPosition(position) {
