@@ -4,6 +4,9 @@ var lat;
 var lon;
 var accu;
 
+var savelocButton = $("#savelocButton");
+var getLocationButton = $("#getLocationButton");
+var texto  = $("#texto");
 
 function getLocation()  {
   var options = null;
@@ -32,6 +35,10 @@ function showPosition(position) {
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
 	L.circle([lat, lon], accu).addTo(map);
+
+	savelocButton.removeClass( "hide" );
+	getLocationButton.addClass("hide");
+	texto.addClass("hide");
 
 };
 
