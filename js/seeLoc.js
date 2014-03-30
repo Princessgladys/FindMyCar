@@ -17,6 +17,10 @@ L.tileLayer(map_url, {
 }).addTo(map);
 */
 
+Number.prototype.round = function(places) {
+  return +(Math.round(this + "e+" + places)  + "e-" + places);
+};
+
 var carlat,carlon;
 	
 //retrieve values (date and car positions) from the database
@@ -125,7 +129,5 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-Number.prototype.round = function(places) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
-}
+
   
