@@ -77,15 +77,17 @@ function showPosition(position) {
 	mylon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
-	var mapCenter = new L.LatLng(mylat, mylon);
-	map.setView(mapCenter, 16);
+	var myPosition = new L.LatLng(mylat, mylon);
+	var centerlat= +lat;
+	centerlat= centerlat+0.0005
+	map.setView([centerlat,lon], 16);
 
 	var distance2car= getDistanceFromLatLonInKm(mylat, mylon, carlat, carlon);
 
-	L.marker(mapCenter).addTo(map)
-	.bindPopup("You are within " + accu + " meters from this point</br>and your car is "+distance2car.round(2) +"km away").openPopup();
+	L.marker(myPosition).addTo(map)
+	.bindPopup("You are within " + distance2car.round(2) + " km from your car").openPopup();
 
-	L.circle(mapCenter, accu).addTo(map);
+	L.circle(myPosition, accu).addTo(map);
 }
 
 function getNoPosition(position) {
