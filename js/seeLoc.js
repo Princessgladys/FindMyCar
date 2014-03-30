@@ -44,7 +44,7 @@ else {
 	console.log('car parked on: '+fecha+', at '+carlat.round(4)+', '+carlon.round(4));
 
 	var carLatLng = new L.LatLng(lat, lon);
-	map.setView([carLat++0.0005,carlon], 16);
+	map.setView([carLat+0.0005,carlon], 16);
 	
 	// add car red marker, Extend the Default marker class
     var RedIcon = L.Icon.Default.extend({
