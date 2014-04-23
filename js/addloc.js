@@ -4,9 +4,6 @@ var lat;
 var lon;
 var accu;
 
-var savelocButton = $("#savelocButton");
-var getLocationButton = $("#getLocationButton");
-var texto  = $("#texto");
 
 function getLocation()  {
   var options = null;
@@ -26,20 +23,13 @@ function showPosition(position) {
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
-	var centerlat= +lat;
-	centerlat= centerlat+0.0005
-	var mapCenter = new L.LatLng(centerlat, lon);
+	var mapCenter = new L.LatLng(lat, lon);
 	map.setView(mapCenter, 17);
 
-	L.marker([lat, lon]).addTo(map)
+	L.marker(mapCenter).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
-	L.circle([lat, lon], accu).addTo(map);
-
-	savelocButton.removeClass( "hide" );
-	getLocationButton.addClass("hide");
-	texto.addClass("hide");
-
+	L.circle(mapCenter, accu).addTo(map);
 };
 
 function getNoPosition(position) {
@@ -50,11 +40,10 @@ function getNoPosition(position) {
 var map = L.map('map').setView([41.3905, 2.1914], 15);
 
 //the base map:
-L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
-	maxZoom: 17,
-	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors. Routes from <a href="http://project-osrm.org/">OSRM</a>',
+    maxZoom: 18
 }).addTo(map);
-
 
 /*map.on('moveend', function() {
     console.log("map was panned!");
