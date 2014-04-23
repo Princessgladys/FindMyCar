@@ -4,6 +4,9 @@ var lat;
 var lon;
 var accu;
 
+var savelocButton = $("#savelocButton");
+var getLocationButton = $("#getLocationButton");
+var texto  = $("#texto");
 
 function getLocation()  {
   var options = null;
@@ -18,18 +21,25 @@ function getLocation()  {
 
 function showPosition(position) {
   	x.innerHTML = position.coords.latitude +', '+ position.coords.longitude;
-	
+
 	lat = position.coords.latitude;
 	lon = position.coords.longitude;
 	accu= position.coords.accuracy;
 
-	var mapCenter = new L.LatLng(lat, lon);
+	var centerlat= +lat;
+	centerlat= centerlat+0.0005
+	var mapCenter = new L.LatLng(centerlat, lon);
 	map.setView(mapCenter, 17);
 
-	L.marker(mapCenter).addTo(map)
+	L.marker([lat, lon]).addTo(map)
 	.bindPopup("You are within " + accu + " meters from this point").openPopup();
 
-	L.circle(mapCenter, accu).addTo(map);
+	L.circle([lat, lon], accu).addTo(map);
+
+	savelocButton.removeClass( "hide" );
+	getLocationButton.addClass("hide");
+	texto.addClass("hide");
+
 };
 
 function getNoPosition(position) {
@@ -78,7 +88,7 @@ function savelocation() {
 	var newDate = new Date(),
 		DateTime = newDate.getTime(),
 		values = new Array();
-	
+
 	values.push(lat); //push each value into our values array
 	values.push(lon);
 	values.push(accu);
@@ -88,6 +98,3 @@ function savelocation() {
 	console.log('savelocation:'+DateTime+ ', '+ lat+', '+lon+ ', '+ accu)
 
 };
-
-
-
