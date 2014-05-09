@@ -1,8 +1,12 @@
+var routeButton = $("#routeButton");
+var getLocationButton = $("#getLocationButton");
+var texto  = $("#texto");
+
+
+// initial view: Barcelona [por que yo lo valgo ;p]
 var map = L.map('map').setView([41.3904, 2.1914], 15);
 
 //the base map:
-// 
-//alternate base
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors. Routes from <a href="http://project-osrm.org/">OSRM</a>',
     maxZoom: 18
